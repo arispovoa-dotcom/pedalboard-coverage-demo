@@ -1,0 +1,15 @@
+[submodule "JUCE"]
+	path = JUCE
+	url = https://github.com/juce-framework/JUCE.git
+[submodule "vendors/rubberband"]
+	path = vendors/rubberband
+	url = https://github.com/BreakfastQuay/Rubberband.git
+[submodule "vendors/lame"]
+	path = vendors/lame
+	url = https://github.com/lameproject/lame.git
+[submodule "vendors/libgsm"]
+	path = vendors/libgsm
+	url = https://github.com/timothytylee/libgsm.git
+[submodule "vendors/pybind11"]
+	path = vendors/pybind11
+	url = git@github.com:pybind/pybind11.git

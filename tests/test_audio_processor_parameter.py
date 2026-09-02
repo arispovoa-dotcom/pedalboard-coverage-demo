@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# pyright: reportAttributeAccessIssue=false
+# pyright: reportArgumentType=false
+# pyright: reportCallIssue=false
+# pyright: reportIndexIssue=false
+
 """
 Unit tests for :class:`pedalboard.AudioProcessorParameter` and the
 ``_PythonExternalPluginMixin`` that back the ``plugin.parameters`` /

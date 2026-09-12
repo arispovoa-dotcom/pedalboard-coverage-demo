@@ -134,3 +134,10 @@ class TestNormalizeMidiMessages:
     def test_repeated_timestamps_below_threshold_are_accepted(self):
         messages = [(NOTE_ON, 0.0)] + [(NOTE_ON, 0.25) for _ in range(100)]
         assert len(normalize_midi_messages(messages)) == 101
+
+    def test_delta_detection_requires_more_than_100_messages(self):
+        # Exactly 100 messages never trigger delta detection, even if 99 of them
+        # share a timestamp; only the messages that survive parsing are counted.
+        messages = [(NOTE_ON, 0.0)] + [(NOTE_ON, 0.25) for _ in range(99)]
+        assert len(normalize_midi_messages(messages)) == 100
+        assert len(normalize_midi_messages(messages + ["dropped"] * 500)) == 100
